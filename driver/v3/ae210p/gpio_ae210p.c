@@ -4,7 +4,7 @@
  *
  */
 
-#include "../../../driver/v3/ae210p/gpio_ae210p.h"
+#include "gpio_ae210p.h"
 
 #include <nds32_intrinsic.h>
 

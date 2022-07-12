@@ -4,9 +4,9 @@
  *
  */
 
-#include "../../../driver/v3/ae210p/pwm_ae210p.h"
+#include "pwm_ae210p.h"
 
-#include "../../../driver/v3/ae210p/config/RTE_Device.h"
+#include "config/RTE_Device.h"
 
 #define NDS_PWM_DRV_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,9)
 

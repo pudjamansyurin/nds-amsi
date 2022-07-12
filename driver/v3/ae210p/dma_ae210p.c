@@ -4,7 +4,7 @@
  *
  */
 
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
+#include "dma_ae210p.h"
 
 #include "ae210p.h"
 #include "cache.h"

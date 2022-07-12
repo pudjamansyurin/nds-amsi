@@ -4,10 +4,10 @@
  *
  */
 
-#include "../../../driver/v3/ae210p/rtc_ae210p.h"
+#include "rtc_ae210p.h"
 
 #include <nds32_intrinsic.h>
-#include "../../../driver/v3/ae210p/config/RTE_Device.h"
+#include "config/RTE_Device.h"
 
 #define NDS_RTC_DRV_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,9)
 

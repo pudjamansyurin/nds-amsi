@@ -8,7 +8,7 @@
 #define __PWM_AE210P_H
 
 #include "ae210p.h"
-#include "../../../driver/include/Driver_PWM.h"
+#include "../include/Driver_PWM.h"
 
 // Number of PWM channels
 #define PWM_NUMBER_OF_CHANNELS           (4)

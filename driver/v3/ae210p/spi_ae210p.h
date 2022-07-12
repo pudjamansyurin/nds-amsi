@@ -8,8 +8,8 @@
 #define __SPI_AE210P_H
 
 #include "ae210p.h"
-#include "../../../driver/include/Driver_SPI.h"
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
+#include "../include/Driver_SPI.h"
+#include "dma_ae210p.h"
 
 
 /* SPI ID revision register */

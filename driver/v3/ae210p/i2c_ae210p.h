@@ -9,9 +9,9 @@
 
 #include "ae210p.h"
 
-#include "../../../driver/include/Driver_I2C.h"
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
+#include "../include/Driver_I2C.h"
+#include "dma_ae210p.h"
+#include "dma_ae210p.h"
 /*****************************************************************************
  *  HAL Level : Interrupt                                                    *
  ****************************************************************************/

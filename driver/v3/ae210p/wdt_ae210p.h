@@ -8,7 +8,7 @@
 #define __WDT_AE210P_H
 
 #include "ae210p.h"
-#include "../../../driver/include/Driver_WDT.h"
+#include "../include/Driver_WDT.h"
 
 /* 0x10 Control Register */
 

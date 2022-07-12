@@ -5,7 +5,7 @@
 #ifndef __DRIVER_I2C_H
 #define __DRIVER_I2C_H
 
-#include "../../driver/include/Driver_Common.h"
+#include "Driver_Common.h"
 
 #define NDS_I2C_API_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,02)  /* API version */
 

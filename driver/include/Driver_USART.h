@@ -6,7 +6,7 @@
 #ifndef __DRIVER_USART_H
 #define __DRIVER_USART_H
 
-#include "../../driver/include/Driver_Common.h"
+#include "Driver_Common.h"
 
 #define NDS_USART_API_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,02)  /* API version */
 

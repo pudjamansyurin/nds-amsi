@@ -8,7 +8,7 @@
 #define __GPIO_AE210P_H
 
 #include "ae210p.h"
-#include "../../../driver/include/Driver_GPIO.h"
+#include "../include/Driver_GPIO.h"
 
 // GPIO interrupt mode
 #define GPIO_INTR_HIGH_LEVEL        0x2

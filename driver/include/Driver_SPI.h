@@ -5,7 +5,7 @@
 #ifndef __DRIVER_SPI_H
 #define __DRIVER_SPI_H
 
-#include "../../driver/include/Driver_Common.h"
+#include "Driver_Common.h"
 
 #define NDS_SPI_API_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,01)  /* API version */
 

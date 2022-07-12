@@ -4,10 +4,10 @@
  *
  */
 
-#include "../../../driver/v3/ae210p/i2c_ae210p.h"
+#include "i2c_ae210p.h"
 
 #include <nds32_intrinsic.h>
-#include "../../../driver/v3/ae210p/config/RTE_Device.h"
+#include "config/RTE_Device.h"
 
 #define NDS_I2C_DRV_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,9)
 

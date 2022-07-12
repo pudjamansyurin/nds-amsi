@@ -8,7 +8,7 @@
 #define __RTC_AE210P_H
 
 #include "ae210p.h"
-#include "../../../driver/include/Driver_RTC.h"
+#include "../include/Driver_RTC.h"
 
 /*****************************************************************************
  *  HAL Level : Interrupt                                                    *

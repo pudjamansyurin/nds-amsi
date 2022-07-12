@@ -5,7 +5,7 @@
 #ifndef __DRIVER_RTC_H
 #define __DRIVER_RTC_H
 
-#include "../../driver/include/Driver_Common.h"
+#include "Driver_Common.h"
 
 // API version
 #define NDS_RTC_API_VERSION NDS_DRIVER_VERSION_MAJOR_MINOR(2,02)

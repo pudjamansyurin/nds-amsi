@@ -9,9 +9,9 @@
 
 #include "ae210p.h"
 
-#include "../../../driver/include/Driver_USART.h"
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
-#include "../../../driver/v3/ae210p/dma_ae210p.h"
+#include "../include/Driver_USART.h"
+#include "dma_ae210p.h"
+#include "dma_ae210p.h"
 
 /* IER Register (+0x24) */
 #define UARTC_IER_RDR                   0x01 /* Data Ready Enable */
