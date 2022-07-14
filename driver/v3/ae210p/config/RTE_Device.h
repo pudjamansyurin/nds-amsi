@@ -1,6 +1,7 @@
 #ifndef __RTE_DEVICE_H
 #define __RTE_DEVICE_H
 
+#define USE_DMA			(1)
 
 // USB0 Controller [Driver_USBD0 and Driver_USBH0]
 // Configuration settings for Driver_USBD0 in component ::Drivers:USB Device
@@ -87,13 +88,13 @@
 // DMA
 //   Tx
 //     Channel     <0=>0 <1=>1 <2=>2 <3=>3 <4=>4 <5=>5 <6=>6 <7=>7
-#define RTE_SPI1_DMA_TX_EN              1
+#define RTE_SPI1_DMA_TX_EN              USE_DMA
 #define RTE_SPI1_DMA_TX_CH              0
 #define RTE_SPI1_DMA_TX_REQID           2
 
 //   Rx
 //     Channel     <0=>0 <1=>1 <2=>2 <3=>3 <4=>4 <5=>5 <6=>6 <7=>7
-#define RTE_SPI1_DMA_RX_EN              1
+#define RTE_SPI1_DMA_RX_EN              USE_DMA
 #define RTE_SPI1_DMA_RX_CH              1
 #define RTE_SPI1_DMA_RX_REQID           3
 
