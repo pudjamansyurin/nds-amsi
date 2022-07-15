@@ -9,8 +9,6 @@
 #include "ae210p.h"
 #include "cache.h"
 
-//#define USE_LLW_SCW
-
 typedef struct {
 	uint32_t           SrcAddr;
 	uint32_t           DstAddr;
@@ -48,7 +46,6 @@ __inline static int32_t set_channel_active_flag (uint8_t ch) {
 #ifdef __NDS32_ISA_V3__
 	uint32_t val;
 
-#ifdef USE_LLW_SCW
 	do {
 		val = __nds32__llw((void *)&channel_active);
 
@@ -56,10 +53,6 @@ __inline static int32_t set_channel_active_flag (uint8_t ch) {
 			return -1;
 		}
 	} while (!__nds32__scw((void *)&channel_active, val | (1U << ch)));
-#else
-	val = (1U << ch);
-	channel_active |= val;
-#endif
 
 	return 0;
 #else
@@ -93,13 +86,7 @@ __inline static int32_t set_channel_active_flag (uint8_t ch) {
 */
 __inline static void clear_channel_active_flag (uint8_t ch) {
 #ifdef __NDS32_ISA_V3__
-#ifdef USE_LLW_SCW
 	while (!__nds32__scw((void *)&channel_active, (__nds32__llw((void *)&channel_active) & ~(1U << ch))));
-#else
-	uint32_t val;
-	val = ~(1U << ch);
-	channel_active &= val;
-#endif
 #else
 	uint8_t gie = (__nds32__mfsr(NDS32_SR_PSW) & 1);
 
