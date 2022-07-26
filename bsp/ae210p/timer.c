@@ -22,10 +22,10 @@
 static void timer_init_irqchip(void)
 {
 	/* set TIMER1 priority to lowest */
-	// __nds32__set_int_priority(IRQ_PIT_VECTOR, 3);
+	__nds32__set_int_priority(IRQ_PIT_VECTOR, 3);
 
 	/* set UART priority higher than TIMER1 if we need UART output in Timer IRQ */
-	// __nds32__set_int_priority(IRQ_UART2_VECTOR, 2);
+	__nds32__set_int_priority(IRQ_UART2_VECTOR, 2);
 
 	/* enable HW# (PIT) */
 	__nds32__enable_int(IRQ_PIT_VECTOR);
