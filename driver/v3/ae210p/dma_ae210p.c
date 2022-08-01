@@ -34,6 +34,7 @@ static DMA_Channel_Info channel_info[DMA_NUMBER_OF_CHANNELS];
 #define DMA_DCACHE_INVALID(start, end)	NULL
 #endif
 
+#pragma GCC optimize ("O1")
 /**
   \fn          int32_t set_channel_active_flag (uint8_t ch)
   \brief       Protected set of channel active flag
@@ -78,6 +79,7 @@ __inline static int32_t set_channel_active_flag (uint8_t ch) {
 	return 0;
 #endif
 }
+#pragma GCC reset_options
 
 /**
   \fn          void clear_channel_active_flag (uint8_t ch)
