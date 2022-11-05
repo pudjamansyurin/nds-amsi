@@ -736,8 +736,8 @@ static int32_t usart_control (	uint32_t          control,
 		usart->info->xfer.send_active = 0U;
 		return NDS_DRIVER_OK;
 
-		// Abort receive
-		case NDS_USART_ABORT_RECEIVE:
+	// Abort receive
+	case NDS_USART_ABORT_RECEIVE:
 		// Disable receive data available interrupt
 		usart->reg->IER &= ~UARTC_IER_RDR;
 
@@ -1125,6 +1125,16 @@ static void usart_irq_handler (USART_RESOURCES *usart) {
 			event |= NDS_USART_EVENT_DCD;
 			}
 
+		}
+	}
+	else
+	{
+		if (usart->info->rx_status.rx_busy)
+		{
+			if (usart->info->flags & USART_FLAG_RX_ENABLED)
+			{
+				event = NDS_USART_EVENT_RX_BREAK;
+			}
 		}
 	}
 
