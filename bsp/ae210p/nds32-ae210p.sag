@@ -1,0 +1,16 @@
+USER_SECTIONS .vector
+EILM 0x00000000 0x00080000 ; address base 0x00000000, max_size=512K
+{
+	EXEC 0x00000000
+	{
+		* (.vector)
+		* (+ISR,+RO)
+	}
+	EDLM 0x00200000 0x00080000
+	{
+		LOADADDR NEXT __data_lmastart
+		ADDR NEXT __data_start
+		* (+RW,+ZI)
+		STACK = 0x00280000
+	}
+}
