@@ -103,6 +103,26 @@ void delay(uint64_t ms){
 	}
 }
 
+static int32_t spi_get_dma_width(const SPI_RESOURCES *spi)
+{
+    int32_t s32_width;
+
+    if (8 >= spi->info->data_bits)
+    {
+        s32_width = DMA_WIDTH_BYTE;
+    }
+    else if (16 >= spi->info->data_bits)
+    {
+        s32_width = DMA_WIDTH_HALFWORD;
+    }
+    else
+    {
+        s32_width = DMA_WIDTH_WORD;
+    }
+
+    return (s32_width);
+}
+
 
 // local functions
 static inline uint32_t spi_ip_revision_number(SPI_RESOURCES *spi) {
@@ -311,8 +331,8 @@ static uint32_t spi_block_send(SPI_RESOURCES *spi) {
 					    (uint32_t)(long)(&(spi->reg->DATA)),
 					    Block_tx_num,
 					    DMA_CH_CTRL_SBSIZE(DMA_BSIZE_1)          |
-					    DMA_CH_CTRL_SWIDTH(DMA_WIDTH_BYTE)       |
-					    DMA_CH_CTRL_DWIDTH(DMA_WIDTH_BYTE)       |
+					    DMA_CH_CTRL_SWIDTH(spi_get_dma_width(spi))       |
+					    DMA_CH_CTRL_DWIDTH(spi_get_dma_width(spi))       |
 					    DMA_CH_CTRL_DMODE_HANDSHAKE              |
 					    DMA_CH_CTRL_SRCADDR_INC                  |
 					    DMA_CH_CTRL_DSTADDR_FIX                  |
@@ -424,8 +444,8 @@ static uint32_t spi_block_receive(SPI_RESOURCES *spi) {
 					     (uint32_t)(long)spi->info->xfer.rx_buf,
 					     Block_rx_num,
 					     DMA_CH_CTRL_SBSIZE(DMA_BSIZE_1)          |
-					     DMA_CH_CTRL_SWIDTH(DMA_WIDTH_BYTE)       |
-					     DMA_CH_CTRL_DWIDTH(DMA_WIDTH_BYTE)       |
+					     DMA_CH_CTRL_SWIDTH(spi_get_dma_width(spi))       |
+					     DMA_CH_CTRL_DWIDTH(spi_get_dma_width(spi))       |
 					     DMA_CH_CTRL_SMODE_HANDSHAKE              |
 					     DMA_CH_CTRL_SRCADDR_FIX                  |
 					     DMA_CH_CTRL_DSTADDR_INC                  |
@@ -539,8 +559,8 @@ static int32_t spi_block_transfer(SPI_RESOURCES *spi) {
 						      (uint32_t)(long)(&(spi->reg->DATA)),
 						      Block_tx_num,
 						      DMA_CH_CTRL_SBSIZE(DMA_BSIZE_1)          |
-						      DMA_CH_CTRL_SWIDTH(DMA_WIDTH_BYTE)       |
-						      DMA_CH_CTRL_DWIDTH(DMA_WIDTH_BYTE)       |
+						      DMA_CH_CTRL_SWIDTH(spi_get_dma_width(spi))       |
+						      DMA_CH_CTRL_DWIDTH(spi_get_dma_width(spi))       |
 						      DMA_CH_CTRL_DMODE_HANDSHAKE              |
 						      DMA_CH_CTRL_SRCADDR_INC                  |
 						      DMA_CH_CTRL_DSTADDR_FIX                  |
@@ -564,8 +584,8 @@ static int32_t spi_block_transfer(SPI_RESOURCES *spi) {
 						     (uint32_t)(long)spi->info->xfer.rx_buf,
 						     Block_tx_num,
 						     DMA_CH_CTRL_SBSIZE(DMA_BSIZE_1)          |
-						     DMA_CH_CTRL_SWIDTH(DMA_WIDTH_BYTE)       |
-						     DMA_CH_CTRL_DWIDTH(DMA_WIDTH_BYTE)       |
+						     DMA_CH_CTRL_SWIDTH(spi_get_dma_width(spi))       |
+						     DMA_CH_CTRL_DWIDTH(spi_get_dma_width(spi))       |
 						     DMA_CH_CTRL_SMODE_HANDSHAKE              |
 						     DMA_CH_CTRL_SRCADDR_FIX                  |
 						     DMA_CH_CTRL_DSTADDR_INC                  |
